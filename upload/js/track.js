@@ -105,9 +105,6 @@
 		}
 
 	}
-
-	initTrack();
-
 	Track.parseURL = parseURL;
 	Track.trackPage = trackPage;
 	Track.trackEvent = trackEvent;

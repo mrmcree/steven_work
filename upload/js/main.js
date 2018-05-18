@@ -131,14 +131,14 @@ $('.submit_btn').on('click',function () {
 		return
 	}
 	let formData={
-		userName:userName.val(),
-		userTel:userTel.val(),
+		username:userName.val(),
+		phone:userTel.val(),
 		passcard:imgDatas['passcard'],
 		passcardback:imgDatas['passcardback'],
-		contactName:contactName.val(),
-		contactTel:contactTel.val(),
-		carColor:$('[name=car_color]').val(),
-		cardNum:$('[name=car_num]').val(),
+		emergency:contactName.val(),
+		emergency_phone:contactTel.val(),
+		license_plate_color:$('[name=car_color]').val(),
+		plate_number:$('[name=car_num]').val(),
 		run_img1:imgDatas['run_img1'],
 		run_img2:imgDatas['run_img2'],
 		run_img3:imgDatas['run_img3'],
@@ -147,6 +147,33 @@ $('.submit_btn').on('click',function () {
 		run_img6:imgDatas['run_img6'],
 	}
 	console.log(formData)
+	$.ajax({
+		url:'http://truckservice.applinzi.com/etc/api/upload.php',
+		dataType:'json',
+		type:'post',
+		data:formData,
+		xhr: function() {
+			var xhr = $.ajaxSettings.xhr();
+			if (onprogress && xhr.upload) {
+				xhr.upload.addEventListener('progress', onprogress, false);
+				return xhr;
+			}
+		},
+	}).done(function (res) {
+		if(res.code===1){
+			location.replace('./res.html?success=true')
+		}else{
+			location.replace('./res.html?success=false')
+		}
+	})
+	var per = 0;
+	function onprogress(e) {
+		per= parseInt(100 * e.loaded / e.total);
+		$('.info').html(per+"%");
+		if(per===100){
+
+		}
+	}
 
 })
 
