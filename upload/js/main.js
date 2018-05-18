@@ -133,18 +133,11 @@ $('.submit_btn').on('click',function () {
 	let formData={
 		username:userName.val(),
 		phone:userTel.val(),
-		passcard:imgDatas['passcard'],
-		passcardback:imgDatas['passcardback'],
+		images:[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5'],imgDatas['run_img6']],
 		emergency:contactName.val(),
 		emergency_phone:contactTel.val(),
 		license_plate_color:$('[name=car_color]').val(),
 		plate_number:$('[name=car_num]').val(),
-		run_img1:imgDatas['run_img1'],
-		run_img2:imgDatas['run_img2'],
-		run_img3:imgDatas['run_img3'],
-		run_img4:imgDatas['run_img4'],
-		run_img5:imgDatas['run_img5'],
-		run_img6:imgDatas['run_img6'],
 	}
 	console.log(formData)
 	$.ajax({
