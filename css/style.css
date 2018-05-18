@@ -1,0 +1,368 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+ol li,
+ul li {
+  padding: 0;
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+body {
+  line-height: 1;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+template {
+  display: none;
+}
+html {
+  font-size: 100%;
+  font-family: '微软雅黑', Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a,
+nav {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+input,
+button,
+select,
+textarea,
+label {
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+::-webkit-input-placeholder {
+  text-align: right;
+}
+.pull_right {
+  float: right;
+  text-align: right;
+}
+* {
+  box-sizing: border-box;
+}
+.wrap {
+  width: 100%;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+.wrap .warn_info {
+  color: #f00;
+  position: absolute;
+  bottom: 2px;
+}
+.wrap .head_title {
+  text-align: center;
+  font-size: 0.45rem;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: #fff;
+}
+.wrap .form_wrap {
+  padding: 40px 0 0 0;
+  font-size: 0.4rem;
+}
+.wrap .form_wrap .cell_title {
+  background: #efeff4;
+  padding: 0.3rem 0.4rem;
+  color: #999;
+}
+.wrap .form_wrap .cells_wrap {
+  padding: 0 0.4rem;
+}
+.wrap .form_wrap .cells_wrap>div:last-child {
+  border: 0;
+}
+.wrap .form_wrap .cells_wrap .cell_input {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #dfdfdf;
+  position: relative;
+  overflow: hidden;
+}
+.wrap .form_wrap .cells_wrap .cell_input .car_select {
+  direction: rtl;
+  color: #999;
+}
+.wrap .form_wrap .cells_wrap .cell_input .car_select option {
+  text-align: right;
+}
+.wrap .form_wrap .cells_wrap .cell_input input {
+  float: right;
+  text-align: right;
+}
+.wrap .form_wrap .cells_wrap .cell_upload {
+  padding: 10px 0;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_title {
+  padding: 20px 0;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img {
+  width: 100%;
+  padding-bottom: 10px;
+  overflow: hidden;
+  display: flex;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img .img_wrap {
+  width: 50%;
+  padding: 0 5px;
+  float: left;
+  position: relative;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img .img_wrap .passcard_wrap {
+  position: relative;
+  width: 100%;
+  border: 1px dotted #dfdfdf;
+  padding: 5px;
+  height: 2.8rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img .img_wrap img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img .img_wrap label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  vertical-align: middle;
+  transform: translate(-50%, -50%);
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img .img_wrap label img {
+  width: 1.5rem;
+  border: 0;
+  vertical-align: middle;
+  display: block;
+  margin: 5% auto;
+}
+.wrap .form_wrap .cells_wrap .cell_upload .upload_img .img_wrap label p {
+  margin: 0;
+  padding-bottom: 0.2rem;
+  font-weight: bold;
+  word-break: keep-all;
+}
+.wrap .footer {
+  padding: 0.4rem 0;
+  text-align: center;
+}
+.wrap .footer .submit_btn {
+  width: 90%;
+  border: 0;
+  background-color: #f67d48;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+.card_model {
+  display: none;
+  padding: 0.4rem;
+}
+.card_model .model_title {
+  font-size: 0.45rem;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.card_model .keyboard {
+  background-color: #ced3d9;
+  text-align: center;
+  padding: 4px 2px;
+  display: none;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.card_model .keyboard .key_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card_model .keyboard .key {
+  flex: 1;
+  width: 10%;
+  padding: 2px;
+  flex-basis: 10%;
+}
+.card_model .keyboard .key span {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  line-height: 32px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #888;
+  padding-top: 2px;
+}
+.card_model .keyboard .key span:active {
+  background-color: #4da9f2;
+  color: #fff;
+}
+.card_model .keyboard .key_close>span,
+.card_model .keyboard .key_clean>span {
+  display: block;
+  width: 100%;
+  line-height: 32px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #888;
+  padding-top: 2px;
+  background: #acb3bb;
+}
+.card_model .keyboard .key_close,
+.card_model .keyboard .key_clean {
+  flex: 1;
+  width: 10%;
+  padding: 2px;
+  flex-basis: 10%;
+}
+.card_model .input_list {
+  display: flex;
+}
+.card_model .input_list .input_ctx {
+  flex: 1;
+  padding: 2px;
+}
+.card_model .input_list .input_ctx span {
+  display: block;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 40px;
+  margin: 0 auto;
+  height: 40px;
+  line-height: 40px;
+}

@@ -1,0 +1,177 @@
+@import "rider/clockhand.styl"
+@import "rider/image.styl"
+@import "rider/initialize.styl"
+initialize()
+$baseFontSize = 12; //默认基准font-size
+$gray_color=rgb(239, 239, 244)
+$gray_font_color=#999999
+rem(name, px)
+  {name}: px / $baseFontSize * 1rem
+
+::-webkit-input-placeholder
+  text-align right
+.pull_right
+  float right
+  text-align right
+*
+  box-sizing border-box
+.wrap
+  width 100%
+  display block
+  -webkit-overflow-scrolling touch
+  .warn_info
+    color red
+    position: absolute;
+    bottom: 2px;
+  .head_title
+    text-align: center;
+    font-size: .45rem;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background: #fff;
+  .form_wrap
+    padding: 40px 0 0 0;
+    font-size: .4rem;
+    .cell_title
+      background:$gray_color
+      padding: .3rem .4rem;
+      color: #999999;
+    .cells_wrap
+      padding: 0 .4rem;
+      &>div:last-child
+        border: 0;
+      .cell_input
+        padding: .4rem 0;
+        border-bottom: 1px solid #dfdfdf;
+        position: relative;
+        overflow hidden
+        .car_select
+          direction: rtl;
+          color $gray_font_color
+          option
+            text-align right
+        input
+          float right
+          text-align right
+      .cell_upload
+        padding 10px 0
+        .upload_title
+          padding 20px 0
+        .upload_img
+          width 100%
+          padding-bottom 10px
+          overflow hidden
+          display: flex;
+          .img_wrap
+            width 50%
+            padding 0 5px
+            float left
+            position relative
+            .passcard_wrap
+              position: relative;
+              width: 100%;
+              border: 1px dotted #dfdfdf;
+              padding: 5px;
+              height 2.8rem
+              border-radius: 5px;
+              box-sizing: border-box;
+            img
+              width 100%
+              height: 100%;
+            label
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              vertical-align: middle;
+              transform: translate(-50%,-50%);
+              img
+                width: 1.5rem;
+                border: 0;
+                vertical-align: middle;
+                display: block;
+                margin: 5% auto;
+              p
+                margin: 0;
+                padding-bottom: .2rem;
+                font-weight: bold;
+                word-break: keep-all;
+  .footer
+    padding: .4rem 0;
+    text-align: center;
+    .submit_btn
+      width: 90%;
+      border: 0;
+      background-color: #f67d48;
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size 16px
+      margin 0 auto
+.card_model
+  display none
+  padding: .4rem;
+  .model_title
+    font-size: .45rem;
+    width: 100%;
+    text-align center
+    height: 40px;
+    line-height: 40px;
+  .keyboard
+    background-color: #CED3D9;
+    text-align: center;
+    padding: 4px 2px;
+    display none
+    font-size: 14px;
+    fixed _ _ 0 0
+    .key_list
+      display flex
+      flex-wrap wrap
+    .key
+      flex:1
+      width: 10%;
+      padding: 2px;
+      flex-basis 10%
+      span
+        display: block;
+        width 100%
+        background-color: #fff;
+        line-height 32px
+        border-radius: 4px;
+        box-shadow: 2px 2px 2px #888888;
+        padding-top: 2px;
+        &:active
+          background-color: #4DA9F2;
+          color: #fff;
+    .key_close>span,.key_clean>span
+      display: block;
+      width 100%
+      line-height 32px
+      border-radius: 4px;
+      box-shadow: 2px 2px 2px #888888;
+      padding-top: 2px;
+      background #ACB3BB
+    .key_close,.key_clean
+      flex:1
+      width: 10%;
+      padding: 2px;
+      flex-basis 10%
+  .input_list
+    display flex
+    .input_ctx
+      flex:1
+      padding 2px
+      span
+        display: block;
+        text-align center
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 40px;
+        margin: 0 auto;
+        height: 40px;
+        line-height: 40px;
