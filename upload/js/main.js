@@ -155,17 +155,17 @@ $('.submit_btn').on('click',function () {
 	}).done(function (res) {
 		if(res.code===1){
 			location.replace('./res.html?success=true')
+			$('#progress').hide()
 		}else{
+			$('#progress').hide()
 			location.replace('./res.html?success=false')
 		}
 	})
 	var per = 0;
 	function onprogress(e) {
 		per= parseInt(100 * e.loaded / e.total);
-		$('.info').html(per+"%");
-		if(per===100){
-
-		}
+		$('#progress').show()
+		$('#progress .info').html(per+"%");
 	}
 
 })
