@@ -94,38 +94,6 @@ $('.submit_btn').on('click',function () {
 		Utils.showTip('请输入车牌号')
 		return
 	}
-	$.each(imgDatas,function (index,value) {
-		if(value===null){
-			switch (index){
-				case 'passcard':
-					Utils.showTip('请选择身份证正面')
-					return
-				case 'passcardback':
-					Utils.showTip('请选择身份证背面')
-					return
-				case 'run_img1':
-					Utils.showTip('请选择行驶证正面')
-					return
-				case 'run_img2':
-					Utils.showTip('请选择行驶证背面')
-					return
-				case 'run_img3':
-					Utils.showTip('请选择行驶证副本反面')
-					return
-				case 'run_img4':
-					Utils.showTip('请选择车辆道路运输证')
-					return
-				case 'run_img5':
-					Utils.showTip('请选择运营证')
-					return
-				case 'run_img6':
-					Utils.showTip('请选择挂靠公司营业执照')
-					return
-				default:
-					return
-			}
-		}
-	})
 	if($('.warn_info').html()!==''){
 		Utils.showTip('请检查是否输入正确')
 		return
@@ -140,6 +108,40 @@ $('.submit_btn').on('click',function () {
 		plate_number:$('[name=car_num]').val(),
 	}
 	console.log(formData)
+	let images=[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5'],imgDatas['run_img6']]
+
+	if(images[0]===null){
+		Utils.showTip('请选择身份证正面')
+		return
+	}
+	if(images[1]===null){
+		Utils.showTip('请选择身份证背面')
+		return
+	}
+	if(images[2]===null){
+		Utils.showTip('请选择行驶证正本')
+		return
+	}
+	if(images[3]===null){
+		Utils.showTip('请选择行驶证副本')
+		return
+	}
+	if(images[4]===null){
+		Utils.showTip('请选择行驶证副本反面')
+		return
+	}
+	if(images[5]===null){
+		Utils.showTip('请选择车辆道路运输证')
+		return
+	}
+	if(images[6]===null){
+		Utils.showTip('营运证')
+		return
+	}
+	if(images[7]===null){
+		Utils.showTip('挂靠公司营业执照')
+		return
+	}
 	$.ajax({
 		url:'http://truckservice.applinzi.com/etc/api/upload.php',
 		dataType:'json',
