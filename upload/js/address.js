@@ -7,11 +7,11 @@
  */
 
 
-var App = function () {
+var Address = function () {
 	var userName = $('.cell_input input[name=shoujianren]')
 	var userTel = $('.cell_input input[name=contacttel]')
 	var address = $('.cell_input input[name=address]')
-	var app = {
+	var ADDRESS = {
 		//收件人验证
 		userCheck: function () {
 			userName.on('change', function () {
@@ -115,7 +115,7 @@ var App = function () {
 
 		}
 	}
-	app.init()
+	ADDRESS.init()
 }()
 
 
