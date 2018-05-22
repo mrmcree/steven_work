@@ -1,9 +1,9 @@
 //申请人姓名验证
-let userName=$('.cell_input input[name=username]')
-let userTel=$('.cell_input input[name=tel]')
+var userName=$('.cell_input input[name=username]')
+var userTel=$('.cell_input input[name=tel]')
 userName.on('change', function () {
-	let myreg = /^[\u0391-\uFFE5]+$/;
-	let value = $(this).val()
+	var myreg = /^[\u0391-\uFFE5]+$/;
+	var value = $(this).val()
 	if (value.length <= 4 && value.length > 1 && myreg.test(value)) {
 		$(this).siblings('.warn_info').html('')
 	} else {
@@ -12,8 +12,8 @@ userName.on('change', function () {
 })
 //申请人手机号验证
 userTel.on('change', function () {
-	let myreg = /\d{11}/;
-	let value = $(this).val()
+	var myreg = /\d{11}/;
+	var value = $(this).val()
 	if (myreg.test(value)) {
 		$(this).siblings('.warn_info').html('')
 	} else {
@@ -21,8 +21,8 @@ userTel.on('change', function () {
 	}
 })
 //上传身份证照片
-let selecter = new ImgSlter({color: '#fff'});
-let imgDatas = {
+var selecter = new ImgSlter({color: '#fff'});
+var imgDatas = {
 	passcard:null,
 	passcardback:null,
 	run_img1:null,
@@ -31,7 +31,7 @@ let imgDatas = {
 	run_img4:null,
 	run_img5:null,
 }//选择的图片对象
-let imgName = null
+var imgName = null
 selecter.handler = function (data) {
 	imgDatas[imgName] = data.img
 	$('[data-name='+imgName+'] img:eq(0)').attr('src',data.img)
@@ -40,7 +40,7 @@ $('.img_wrap').on('click', function () {
 	selecter.select()
 	imgName = $(this).data('name')
 })
-let form1Data={}
+var form1Data={}
 $('.submit_btn').on('click',function () {
 
 	if(userName.val()===''){
@@ -68,7 +68,7 @@ $('.submit_btn').on('click',function () {
 		plate_number:$('[name=car_num]').val(),
 	}
 	console.log(form1Data)
-	let images=[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5']]
+	var images=[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5']]
 
 	if(images[0]===null){
 		Utils.showTip('请选择身份证正面')

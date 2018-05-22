@@ -8,15 +8,15 @@
 
 
 var App = function () {
-	let userName = $('.cell_input input[name=shoujianren]')
-	let userTel = $('.cell_input input[name=contacttel]')
-	let address = $('.cell_input input[name=address]')
+	var userName = $('.cell_input input[name=shoujianren]')
+	var userTel = $('.cell_input input[name=contacttel]')
+	var address = $('.cell_input input[name=address]')
 	var app = {
 		//收件人验证
 		userCheck: function () {
 			userName.on('change', function () {
-				let myreg = /^[\u0391-\uFFE5]+$/;
-				let value = $(this).val()
+				var myreg = /^[\u0391-\uFFE5]+$/;
+				var value = $(this).val()
 				if (value.length <= 4 && value.length > 1 && myreg.test(value)) {
 					$(this).siblings('.warn_info').html('')
 				} else {
@@ -28,8 +28,8 @@ var App = function () {
 		userTelCheck: function () {
 
 			userTel.on('change', function () {
-				let myreg = /\d{11}/;
-				let value = $(this).val()
+				var myreg = /\d{11}/;
+				var value = $(this).val()
 				if (myreg.test(value)) {
 					$(this).siblings('.warn_info').html('')
 				} else {
@@ -40,13 +40,13 @@ var App = function () {
 		submitEvent: function () {
 
 			$('.submit').on('click', function () {
-				let utils = {
+				var utils = {
 					addressee: '请输入收件人',
 					mobile: '请输入手机号',
 					address: '请选择地址',
 					detail_address: '请输入详细地址'
 				}
-				let formdata = {
+				var formdata = {
 					addressee: userName.val(),
 					mobile: userTel.val(),
 					address: $('input[name=input_area]').val(),
@@ -62,7 +62,7 @@ var App = function () {
 					Utils.showTip('请检查是否输入正确')
 					return
 				}
-				let newformdata=Object.assign(formdata,form1Data)
+				var newformdata=$.extend(formdata,form1Data)
 				console.log(newformdata)
 				$.ajax({
 					url:'http://truckservice.applinzi.com/etc/api/upload.php',
