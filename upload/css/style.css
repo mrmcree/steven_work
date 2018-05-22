@@ -158,9 +158,6 @@ label {
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: transparent;
 }
-::-webkit-input-placeholder {
-  text-align: right;
-}
 .pull_right {
   float: right;
   text-align: right;
@@ -172,6 +169,9 @@ label {
   width: 100%;
   display: block;
   -webkit-overflow-scrolling: touch;
+}
+.wrap ::-webkit-input-placeholder {
+  text-align: right;
 }
 .wrap .warn_info {
   color: #f00;

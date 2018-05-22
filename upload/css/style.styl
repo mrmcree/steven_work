@@ -8,8 +8,7 @@ $gray_font_color=#999999
 rem(name, px)
   {name}: px / $baseFontSize * 1rem
 
-::-webkit-input-placeholder
-  text-align right
+
 .pull_right
   float right
   text-align right
@@ -19,6 +18,8 @@ rem(name, px)
   width 100%
   display block
   -webkit-overflow-scrolling touch
+  ::-webkit-input-placeholder
+    text-align right
   .warn_info
     color red
     position: absolute;

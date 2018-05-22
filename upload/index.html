@@ -11,6 +11,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/LArea.min.css">
+    <link rel="stylesheet" href="css/address.css">
 </head>
 <body>
 <div class="wrap">
@@ -140,6 +142,30 @@
     </div>
 
 </div>
+<div class="wrap2">
+    <div class="title_info">填写信息</div>
+    <div class="form_wrap">
+        <div class="cells_wrap">
+            <div class="cell_input">
+                <input type="text" name='shoujianren' placeholder="请输入收件人">
+                <div class="warn_info"></div>
+            </div>
+            <div class="cell_input">
+                <input type="text" name='contacttel' placeholder="请输入联系电话">
+                <div class="warn_info"></div>
+            </div>
+            <div class="cell_input">
+                <input id="address" type="text" readonly="" name="input_area" placeholder="请选择地址"/>
+            </div>
+            <div class="cell_input">
+                <input type="text" name='address' placeholder="详细地址">
+                <div class="warn_info"></div>
+            </div>
+        </div>
+    </div>
+    <div class="btn btn1 submit">确定</div>
+    <div class="btn btn2">取消</div>
+</div>
 <div class="card_model" id="card_model">
     <div class="model_title">请输入车牌</div>
     <ul class="input_list" id="input_list">
@@ -165,6 +191,8 @@
 
 </div>
 <script src="js/index.js"></script>
+<script src='js/LArea.min.js'></script>
+<script src='js/LAreaData1.js'></script>
 <script src="js/jquery-1.js"></script>
 <script src="js/js.cookie.js"></script>
 <script src='js/utils.js'></script>
@@ -175,6 +203,7 @@
 </script>
 <script src='js/keyboard.js'></script>
 <script src='js/main.js'></script>
+<script src='js/address.js'></script>
 <!--<script src="//cdn.jsdelivr.net/npm/eruda"></script>-->
 <!--<script>eruda.init();</script>-->
 </body>

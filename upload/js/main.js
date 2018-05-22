@@ -40,7 +40,7 @@ $('.img_wrap').on('click', function () {
 	selecter.select()
 	imgName = $(this).data('name')
 })
-
+let form1Data={}
 $('.submit_btn').on('click',function () {
 
 	if(userName.val()===''){
@@ -60,14 +60,14 @@ $('.submit_btn').on('click',function () {
 		Utils.showTip('请检查是否输入正确')
 		return
 	}
-	let formData={
+	form1Data={
 		username:userName.val(),
 		phone:userTel.val(),
 		images:[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5']],
 		license_plate_color:$('[name=car_color]').val(),
 		plate_number:$('[name=car_num]').val(),
 	}
-	console.log(formData)
+	console.log(form1Data)
 	let images=[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5']]
 
 	if(images[0]===null){
@@ -95,37 +95,11 @@ $('.submit_btn').on('click',function () {
 		return
 	}
 	if(images[6]===null){
-		Utils.showTip('挂靠公司营业执照')
+		Utils.showTip('请选择挂靠公司营业执照')
 		return
 	}
-
-	$.ajax({
-		url:'http://truckservice.applinzi.com/etc/api/upload.php',
-		dataType:'json',
-		type:'post',
-		data:formData,
-		xhr: function() {
-			var xhr = $.ajaxSettings.xhr();
-			if (onprogress && xhr.upload) {
-				xhr.upload.addEventListener('progress', onprogress, false);
-				return xhr;
-			}
-		},
-	}).done(function (res) {
-		if(res.code===1){
-			location.replace('./res.html?success=true')
-			$('#progress').hide()
-		}else{
-			$('#progress').hide()
-			location.replace('./res.html?success=false')
-		}
-	})
-	var per = 0;
-	function onprogress(e) {
-		per= parseInt(100 * e.loaded / e.total);
-		$('#progress').show()
-		$('#progress .info').html(per+"%");
-	}
+	$('.wrap').hide()
+	$('.wrap2').show()
 
 })
 
