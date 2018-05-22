@@ -30,7 +30,6 @@ let imgDatas = {
 	run_img3:null,
 	run_img4:null,
 	run_img5:null,
-	run_img6:null
 }//选择的图片对象
 let imgName = null
 selecter.handler = function (data) {
@@ -41,37 +40,7 @@ $('.img_wrap').on('click', function () {
 	selecter.select()
 	imgName = $(this).data('name')
 })
-//紧急联系人姓名
-let contactName=$('.cell_input input[name=contactName]')
-contactName.on('change', function () {
-	let myreg = /^[\u0391-\uFFE5]+$/;
-	let value = $(this).val()
-	if (value.length <= 4 && value.length > 1 && myreg.test(value)) {
-		if ($('.cell_input input[name=contactName]').val() === $('.cell_input input[name=username]').val()) {
-			$(this).siblings('.warn_info').html('联系人姓名不能与申请人姓名一致')
-		} else {
-			$(this).siblings('.warn_info').html('')
-		}
 
-	} else {
-		$(this).siblings('.warn_info').html('请输入正确的联系人姓名(2-4汉字)')
-	}
-})
-//联系人手机号
-let contactTel=$('.cell_input input[name=contactTel]')
-contactTel.on('change', function () {
-	let myreg = /\d{11}/;
-	let value = $(this).val()
-	if (myreg.test(value)) {
-		if ($('.cell_input input[name=contactTel]').val() === $('.cell_input input[name=tel]').val()) {
-			$(this).siblings('.warn_info').html('联系人手机号不能与申请人手机号一致')
-		} else {
-			$(this).siblings('.warn_info').html('')
-		}
-	} else {
-		$(this).siblings('.warn_info').html('请输入正确的手机号')
-	}
-})
 $('.submit_btn').on('click',function () {
 
 	if(userName.val()===''){
@@ -82,14 +51,7 @@ $('.submit_btn').on('click',function () {
 		Utils.showTip('请输入手机号')
 		return
 	}
-	if(contactName.val()===''){
-		Utils.showTip('请输入联系人姓名')
-		return
-	}
-	if(contactTel.val()===''){
-		Utils.showTip('请输入联系人手机号')
-		return
-	}
+
 	if($('[name=car_num]').val()===''){
 		Utils.showTip('请输入车牌号')
 		return
@@ -101,14 +63,12 @@ $('.submit_btn').on('click',function () {
 	let formData={
 		username:userName.val(),
 		phone:userTel.val(),
-		images:[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5'],imgDatas['run_img6']],
-		emergency:contactName.val(),
-		emergency_phone:contactTel.val(),
+		images:[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5']],
 		license_plate_color:$('[name=car_color]').val(),
 		plate_number:$('[name=car_num]').val(),
 	}
 	console.log(formData)
-	let images=[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5'],imgDatas['run_img6']]
+	let images=[imgDatas['passcard'],imgDatas['passcardback'],imgDatas['run_img1'],imgDatas['run_img2'],imgDatas['run_img3'],imgDatas['run_img4'],imgDatas['run_img5']]
 
 	if(images[0]===null){
 		Utils.showTip('请选择身份证正面')
@@ -131,17 +91,14 @@ $('.submit_btn').on('click',function () {
 		return
 	}
 	if(images[5]===null){
-		Utils.showTip('请选择车辆道路运输证')
+		Utils.showTip('请选择营运证')
 		return
 	}
 	if(images[6]===null){
-		Utils.showTip('营运证')
-		return
-	}
-	if(images[7]===null){
 		Utils.showTip('挂靠公司营业执照')
 		return
 	}
+
 	$.ajax({
 		url:'http://truckservice.applinzi.com/etc/api/upload.php',
 		dataType:'json',
